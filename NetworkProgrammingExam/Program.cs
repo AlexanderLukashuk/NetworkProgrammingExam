@@ -100,12 +100,6 @@ namespace NetworkProgrammingExam
                                     var json = stream.ReadToEnd();
 
                                     Post post = JsonSerializer.Deserialize<Post>(json);
-
-                                    Console.WriteLine($"{post.UserId}");
-                                    Console.WriteLine($"{post.PostId}");
-                                    Console.WriteLine($"{post.Title}");
-                                    Console.WriteLine($"{post.Body}");
-                                    posts.Add(post);
                                 }
                                 getResponse.Close();
                             }
