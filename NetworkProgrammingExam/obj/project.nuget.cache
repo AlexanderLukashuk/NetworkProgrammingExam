@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RrYtezu8kcRj5KZSpSSLDpiSZBROt82ko/AL1cULCQvNYdBPRKzhSUGfpxA7fckE6CwlXeJIYrqK+/LITR0XrQ==",
+  "dgSpecHash": "giC3WUhp+RVdAS77zMY/pqqXw4iOY1G0MDtX7dsvgmWgkS5zaKrqv7xpuX0Mi+WYJYsN0/T3dy64/Z9GSdc8cA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Luka_ry90\\source\\repos\\NetworkProgrammingExam\\NetworkProgrammingExam\\NetworkProgrammingExam.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Luka_ry90\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,0 +1,15 @@
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\obj\Debug\netcoreapp3.1\NetworkProgrammingExam.csprojAssemblyReference.cache
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\obj\Debug\netcoreapp3.1\NetworkProgrammingExam.AssemblyInfoInputs.cache
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\obj\Debug\netcoreapp3.1\NetworkProgrammingExam.AssemblyInfo.cs
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\obj\Debug\netcoreapp3.1\NetworkProgrammingExam.csproj.CoreCompileInputs.cache
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\bin\Debug\netcoreapp3.1\NetworkProgrammingExam.exe
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\bin\Debug\netcoreapp3.1\NetworkProgrammingExam.deps.json
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\bin\Debug\netcoreapp3.1\NetworkProgrammingExam.runtimeconfig.json
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\bin\Debug\netcoreapp3.1\NetworkProgrammingExam.runtimeconfig.dev.json
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\bin\Debug\netcoreapp3.1\NetworkProgrammingExam.dll
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\bin\Debug\netcoreapp3.1\NetworkProgrammingExam.pdb
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\obj\Debug\netcoreapp3.1\NetworkProgrammingExam.csproj.CopyComplete
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\obj\Debug\netcoreapp3.1\NetworkProgrammingExam.dll
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\obj\Debug\netcoreapp3.1\NetworkProgrammingExam.pdb
+C:\Users\Luka_ry90\source\repos\NetworkProgrammingExam\NetworkProgrammingExam\obj\Debug\netcoreapp3.1\NetworkProgrammingExam.genruntimeconfig.cache
