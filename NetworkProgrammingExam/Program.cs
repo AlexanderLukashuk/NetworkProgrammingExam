@@ -10,7 +10,7 @@ namespace NetworkProgrammingExam
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             string input = String.Empty;
             int menu;
@@ -62,17 +62,6 @@ namespace NetworkProgrammingExam
                                 stream.Write(buffer, 0, buffer.Length);
                             }
 
-                            //var postResponse = await postRequest.GetResponseAsync();
-                            //using (var stream = postResponse.GetResponseStream())
-                            //{
-                            //    using (var reader = new StreamReader(stream))
-                            //    {
-                            //        Console.WriteLine(reader.ReadToEnd());
-                            //    }
-                            //}
-
-                            //postResponse.Close();
-
                             break;
                         }
                     case 2:
@@ -84,7 +73,8 @@ namespace NetworkProgrammingExam
 
                             using (var stream = new StreamReader(getResponse.GetResponseStream()))
                             {
-                                Console.WriteLine(stream.ReadToEnd());
+                                var json = stream.ReadToEnd();
+                                posts = JsonSerializer.Deserialize<List<Post>>(json);
                             }
                             getResponse.Close();
 
@@ -96,19 +86,16 @@ namespace NetworkProgrammingExam
                             input = Console.ReadLine();
                             postNumber = int.Parse(input);
 
+
                             var getRequest = WebRequest.Create($"{pathGET}{postNumber}/");
                             getRequest.Method = "GET";
 
                             var getResponse = getRequest.GetResponse() as HttpWebResponse;
 
-                            //Task.Run(() =>
-                            //{
                             using (var stream = new StreamReader(getResponse.GetResponseStream()))
                             {
-                                //Console.WriteLine(stream.ReadToEnd());
                                 var json = stream.ReadToEnd();
-                                //MessageBox.Show(json);
-                                //client.DownloadFile(path, "file");
+
                                 Post post = JsonSerializer.Deserialize<Post>(json);
 
                                 Console.WriteLine($"{post.UserId}");
@@ -116,20 +103,20 @@ namespace NetworkProgrammingExam
                                 Console.WriteLine($"{post.Title}");
                                 Console.WriteLine($"{post.Body}");
                                 posts.Add(post);
-                                //context.Characters.Add(character);
-                                //context.SaveChanges();
                             }
                             getResponse.Close();
-                            //});
 
                             break;
                         }
                     case 4:
                         {
+                            Console.WriteLine("Good Bye");
                             break;
                         }
                     default:
                         {
+                            Console.WriteLine("Вы ввели неверную опцию");
+                            Console.WriteLine("Попробуйте выбрать еще раз");
                             break;
                         }
                 }
