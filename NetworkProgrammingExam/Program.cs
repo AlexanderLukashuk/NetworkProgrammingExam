@@ -13,19 +13,20 @@ namespace NetworkProgrammingExam
         static void Main(string[] args)
         {
             string input = String.Empty;
-            int menu;
+            int menu = 4;
             int postNumber = 1;
             string pathGET = "https://jsonplaceholder.typicode.com/posts/";
             string pathPOST = "https://jsonplaceholder.typicode.com/posts/";
             string postTitle;
             string postBody;
+            bool result;
             Console.WriteLine("Выберите опцию:");
             Console.WriteLine("1) Создать пост");
             Console.WriteLine("2) Получить список постов");
             Console.WriteLine("3) Получить пост по номеру");
             Console.WriteLine("4) Выход");
             input = Console.ReadLine();
-            menu = int.Parse(input);
+            result = int.TryParse(input, out menu);
             List<Post> posts = new List<Post>();
 
             while (menu != 4)
@@ -66,6 +67,7 @@ namespace NetworkProgrammingExam
                         }
                     case 2:
                         {
+                            posts.Clear();
                             var getRequest = WebRequest.Create(pathGET);
                             getRequest.Method = "GET";
 
@@ -86,25 +88,33 @@ namespace NetworkProgrammingExam
                             input = Console.ReadLine();
                             postNumber = int.Parse(input);
 
-
-                            var getRequest = WebRequest.Create($"{pathGET}{postNumber}/");
-                            getRequest.Method = "GET";
-
-                            var getResponse = getRequest.GetResponse() as HttpWebResponse;
-
-                            using (var stream = new StreamReader(getResponse.GetResponseStream()))
+                            try
                             {
-                                var json = stream.ReadToEnd();
+                                var getRequest = WebRequest.Create($"{pathGET}{postNumber}/");
+                                getRequest.Method = "GET";
 
-                                Post post = JsonSerializer.Deserialize<Post>(json);
+                                var getResponse = getRequest.GetResponse() as HttpWebResponse;
 
-                                Console.WriteLine($"{post.UserId}");
-                                Console.WriteLine($"{post.PostId}");
-                                Console.WriteLine($"{post.Title}");
-                                Console.WriteLine($"{post.Body}");
-                                posts.Add(post);
+                                using (var stream = new StreamReader(getResponse.GetResponseStream()))
+                                {
+                                    var json = stream.ReadToEnd();
+
+                                    Post post = JsonSerializer.Deserialize<Post>(json);
+
+                                    Console.WriteLine($"{post.UserId}");
+                                    Console.WriteLine($"{post.PostId}");
+                                    Console.WriteLine($"{post.Title}");
+                                    Console.WriteLine($"{post.Body}");
+                                    posts.Add(post);
+                                }
+                                getResponse.Close();
                             }
-                            getResponse.Close();
+                            catch (Exception exception)
+                            {
+                                Console.WriteLine(exception.Message);
+                                Console.WriteLine("Вы ввели недопустимое число");
+                                Console.WriteLine("Попробуйте еще раз");
+                            }
 
                             break;
                         }
@@ -127,8 +137,9 @@ namespace NetworkProgrammingExam
                 Console.WriteLine("3) Получить пост по номеру");
                 Console.WriteLine("4) Выход");
                 input = Console.ReadLine();
-                menu = int.Parse(input);
+                result = int.TryParse(input, out menu);
             }
+
         }
     }
 }
